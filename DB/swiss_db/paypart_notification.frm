@@ -1,0 +1,16 @@
+TYPE=VIEW
+query=select `swiss_db`.`h_pay_part_db`.`id_num` AS `id_num`,`swiss_db`.`h_pay_part_db`.`date` AS `date`,`swiss_db`.`h_pay_part_db`.`my_name` AS `my_name`,`swiss_db`.`h_pay_part_db`.`couses` AS `recipient`,`swiss_db`.`h_pay_part_db`.`recipient_name` AS `recipient_name` from `swiss_db`.`h_pay_part_db` where `swiss_db`.`h_pay_part_db`.`recipient_name` is null order by `swiss_db`.`h_pay_part_db`.`couses`,`swiss_db`.`h_pay_part_db`.`id_num` desc
+md5=228baa30fcf644bd92483daac206f2c0
+updatable=1
+algorithm=0
+definer_user=root
+definer_host=localhost
+suid=2
+with_check_option=0
+timestamp=2021-12-13 08:23:21
+create-version=2
+source=SELECT `id_num`, `date`, `my_name`,`couses`AS `recipient`,`recipient_name`AS `recipient_name` FROM `h_pay_part_db` WHERE `recipient_name` IS NULL ORDER BY `couses` , `id_num` DESC
+client_cs_name=utf8mb4
+connection_cl_name=utf8mb4_unicode_ci
+view_body_utf8=select `swiss_db`.`h_pay_part_db`.`id_num` AS `id_num`,`swiss_db`.`h_pay_part_db`.`date` AS `date`,`swiss_db`.`h_pay_part_db`.`my_name` AS `my_name`,`swiss_db`.`h_pay_part_db`.`couses` AS `recipient`,`swiss_db`.`h_pay_part_db`.`recipient_name` AS `recipient_name` from `swiss_db`.`h_pay_part_db` where `swiss_db`.`h_pay_part_db`.`recipient_name` is null order by `swiss_db`.`h_pay_part_db`.`couses`,`swiss_db`.`h_pay_part_db`.`id_num` desc
+mariadb-version=100419
