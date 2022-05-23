@@ -97,6 +97,7 @@ namespace project_company_Elswassrya
             comb_Search_Wh.ResetText();
             comb_Search_Wh.Refresh();
             tex_Search_Wh.Clear();
+            tex_sup_name.Clear();
 
             dataGridView_Wh.Refresh();
             FillGrid_Wh();
@@ -966,7 +967,7 @@ namespace project_company_Elswassrya
                     time = time.Substring(10, 8);
                     if (string.IsNullOrEmpty(tex_QT_IW.Text)) tex_QT_IW.Text = "00";
                     if (string.IsNullOrEmpty(tex_QK_IW.Text)) tex_QK_IW.Text = "00";
-                    string StrInsert_W = "INSERT INTO `incoming_wheat` VALUES ('" + null + "','" + tex_Truck_Number_IW.Text + "','" + time + "','" + tex_QT_IW.Text + "','" + tex_QK_IW.Text + "','" + tex_Weight_type_IW.Text + "','" + tex_Hum_IW.Text + "','" + tex_Weight10000.Text + "','" + tex_Wet_gluten_IW.Text + "','" + tex_Dry_gluten_IW.Text + "','" + tex_Index_Number_IW.Text + "','" + tex_Falling_number_IW.Text + "','" + tex_Cleanliness_IW.Text + "','" + tex_TypeW_IW.Text + "','" + texNotes_IW.Text + "','" + datePicker_IW.Value + "')";
+                    string StrInsert_W = "INSERT INTO `incoming_wheat` VALUES ('" + null + "','" + tex_Truck_Number_IW.Text + "','" + time + "','" + tex_QT_IW.Text + "','" + tex_QK_IW.Text + "','" + tex_Weight_type_IW.Text + "','" + tex_Hum_IW.Text + "','" + tex_Weight10000.Text + "','" + tex_Wet_gluten_IW.Text + "','" + tex_Dry_gluten_IW.Text + "','" + tex_Index_Number_IW.Text + "','" + tex_Falling_number_IW.Text + "','" + tex_Cleanliness_IW.Text + "','" + tex_TypeW_IW.Text + "','" + texNotes_IW.Text + "','" + datePicker_IW.Value + "','" + tex_sup_name.Text + "')";
                     cmd.Parameters.Clear();
                     SetCommand(StrInsert_W);
                     cmd.ExecuteNonQuery();
@@ -1006,7 +1007,7 @@ namespace project_company_Elswassrya
                 {
                     string time = TimePicker_IW.Value.ToString();
                     time = time.Substring(10, 8);
-                    string StrUpDate_W = "UPDATE `incoming_wheat` SET `truck_number`='" + tex_Truck_Number_IW.Text + "',`Time_IW`='" + time + "',`Quantity_Tons`='" + tex_QT_IW.Text + "',`Quantity_KG`='" + tex_QK_IW.Text + "',`Weight_type`='" + tex_Weight_type_IW.Text + "',`Humidity`='" + tex_Hum_IW.Text + "',`Weight_10000`='" + tex_Weight10000.Text + "',`Wet_gluten`='" + tex_Wet_gluten_IW.Text + "',`Dry_gluten`='" + tex_Dry_gluten_IW.Text + "',`Index_Number_IW`='" + tex_Index_Number_IW.Text + "',`Falling_number_IW`='" + tex_Falling_number_IW.Text + "',`Cleanliness`='" + tex_Cleanliness_IW.Text + "',`Type_Wheat`='" + tex_TypeW_IW.Text + "',`Notes`='" + texNotes_IW.Text + "', `Date_IW` = '"+datePicker_IW.Value+"' WHERE  `Number_IW` = '" + tex_Number_IW .Text+ "' ";
+                    string StrUpDate_W = "UPDATE `incoming_wheat` SET `truck_number`='" + tex_Truck_Number_IW.Text + "',`Time_IW`='" + time + "',`Quantity_Tons`='" + tex_QT_IW.Text + "',`Quantity_KG`='" + tex_QK_IW.Text + "',`Weight_type`='" + tex_Weight_type_IW.Text + "',`Humidity`='" + tex_Hum_IW.Text + "',`Weight_10000`='" + tex_Weight10000.Text + "',`Wet_gluten`='" + tex_Wet_gluten_IW.Text + "',`Dry_gluten`='" + tex_Dry_gluten_IW.Text + "',`Index_Number_IW`='" + tex_Index_Number_IW.Text + "',`Falling_number_IW`='" + tex_Falling_number_IW.Text + "',`Cleanliness`='" + tex_Cleanliness_IW.Text + "',`Type_Wheat`='" + tex_TypeW_IW.Text + "',`Notes`='" + texNotes_IW.Text + "', `Date_IW` = '"+datePicker_IW.Value+ "',`supplayer`='"+tex_sup_name.Text+"' WHERE  `Number_IW` = '" + tex_Number_IW .Text+ "' ";
                     SetCommand(StrUpDate_W);
                     cmd.ExecuteNonQuery();
                     string StrInsert_W2 = "INSERT INTO `track_incoming_wheat` VALUES ('" + null + "','" + textBox_Name.Text + "','" + "UPDATE" + "','" + tex_Truck_Number_IW.Text + "','" + DateTime.Now.ToString("HH:mm:ss") + "','" + tex_QT_IW.Text + "','" + tex_QK_IW.Text + "','" + tex_Weight_type_IW.Text + "','" + tex_Hum_IW.Text + "','" + tex_Weight10000.Text + "','" + tex_Wet_gluten_IW.Text + "','" + tex_Dry_gluten_IW.Text + "','" + tex_Index_Number_IW.Text + "','" + tex_Falling_number_IW.Text + "','" + tex_Cleanliness_IW.Text + "','" + tex_TypeW_IW.Text + "','" + texNotes_IW.Text + "','" + DateTime.Now.ToString("yyyy/MM/dd") + "')";
@@ -1207,6 +1208,7 @@ namespace project_company_Elswassrya
                     tex_TypeW_IW.Text = dataGridView_Wh.CurrentRow.Cells[13].Value.ToString();
                     texNotes_IW.Text = dataGridView_Wh.CurrentRow.Cells[14].Value.ToString();
                     datePicker_IW.Text = dataGridView_Wh.CurrentRow.Cells[15].Value.ToString();
+                    tex_sup_name.Text = dataGridView_Wh.CurrentRow.Cells[16].Value.ToString();
 
 
 
@@ -3141,6 +3143,30 @@ namespace project_company_Elswassrya
         {
 
 
+        }
+
+        private void pictureBox16_Click_1(object sender, EventArgs e)
+        {
+            Form_FinalProductPasta_AvgHumid FFA = new Form_FinalProductPasta_AvgHumid();
+            FFA.Show();
+        }
+
+        private void pictureBox7_Click_3(object sender, EventArgs e)
+        {
+            Form_IncomeWheat_AvgHumid FIA = new Form_IncomeWheat_AvgHumid();
+            FIA.Show();
+        }
+
+        private void pictureBox10_Click_2(object sender, EventArgs e)
+        {
+            Form_EndProduct_AvgHumid FEA = new Form_EndProduct_AvgHumid();
+            FEA.Show();
+        }
+
+        private void pictureBox13_Click_1(object sender, EventArgs e)
+        {
+            Form_SamplesProduction_AvgHumid FSA = new Form_SamplesProduction_AvgHumid();
+            FSA.Show();
         }
     }
 }

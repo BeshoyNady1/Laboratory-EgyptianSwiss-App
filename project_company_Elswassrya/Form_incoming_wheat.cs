@@ -258,12 +258,12 @@ namespace project_company_Elswassrya
                 string huar = DateTime.Now.Hour.ToString();
                 string Mint = DateTime.Now.Minute.ToString();
 
-                //Console.WriteLine("Laporety_" + year + "_" + month + "_" + day + "_" + huar + "_" + Mint + ".Pdf");
+                //Export AS Excel
                 ExportOptions CrExportOptions;
                 DiskFileDestinationOptions CrDiskFileDestinationOptions = new DiskFileDestinationOptions();
                 ExcelFormatOptions CrFormatTypeOptions = new ExcelFormatOptions();
                 CrDiskFileDestinationOptions.DiskFileName = @"C:\StorgePDF\Incoming_Wheat_" + year + "_" + month + "_" + day + "_" + huar + "_" + Mint + ".xls";
-                Class1.Path_Report_Incoming_Wheat = @"C:\StorgePDF\Incoming_Wheat_" + year + "_" + month + "_" + day + "_" + huar + "_" + Mint + ".xls";
+                Class1.Path_Report_Incoming_Wheat = @"C:\StorgePDF\Incoming_Wheat_" + year + "_" + month + "_" + day + "_" + huar + "_" + Mint + ".xls$";
                 CrExportOptions = cryRpt.ExportOptions;
                 CrExportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
                 CrExportOptions.ExportFormatType = ExportFormatType.ExcelRecord;
@@ -271,8 +271,10 @@ namespace project_company_Elswassrya
                 CrExportOptions.FormatOptions = CrFormatTypeOptions;
                 cryRpt.Export();
 
-                //cryRpt.ExportToDisk(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, @"C:\StorgePDF\Incoming_Wheat_" + year + "_" + month + "_" + day + "_" + huar + "_" + Mint + ".xlsx");
-                //Class1.Path_Report_Incoming_Wheat = @"C:\StorgePDF\Incoming_Wheat_" + year + "_" + month + "_" + day + "_" + huar + "_" + Mint + ".xlsx";
+                //Export AS PDF
+                cryRpt.ExportToDisk(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, @"C:\StorgePDF\Incoming_Wheat_" + year + "_" + month + "_" + day + "_" + huar + "_" + Mint + ".pdf");
+                Class1.Path_Report_Incoming_Wheat += @"C:\StorgePDF\Incoming_Wheat_" + year + "_" + month + "_" + day + "_" + huar + "_" + Mint + ".pdf";
+
                 Form_SendMessage fs = new Form_SendMessage();
                 fs.Show();
                 this.Close();
@@ -308,18 +310,22 @@ namespace project_company_Elswassrya
                 string huar = DateTime.Now.Hour.ToString();
                 string Mint = DateTime.Now.Minute.ToString();
 
-                //Console.WriteLine("Laporety_" + year + "_" + month + "_" + day + "_" + huar + "_" + Mint + ".Pdf");
+                //Export AS Excel
                 ExportOptions CrExportOptions;
                 DiskFileDestinationOptions CrDiskFileDestinationOptions = new DiskFileDestinationOptions();
                 ExcelFormatOptions CrFormatTypeOptions = new ExcelFormatOptions();
                 CrDiskFileDestinationOptions.DiskFileName = @"C:\StorgePDF\Incoming_Wheat_" + year + "_" + month + "_" + day + "_" + huar + "_" + Mint + ".xls";
-                Class1.Path_Report_Incoming_Wheat = @"C:\StorgePDF\Incoming_Wheat_" + year + "_" + month + "_" + day + "_" + huar + "_" + Mint + ".xls";
+                Class1.Path_Report_Incoming_Wheat = @"C:\StorgePDF\Incoming_Wheat_" + year + "_" + month + "_" + day + "_" + huar + "_" + Mint + ".xls$";
                 CrExportOptions = cryRpt.ExportOptions;
                 CrExportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
                 CrExportOptions.ExportFormatType = ExportFormatType.ExcelRecord;
                 CrExportOptions.DestinationOptions = CrDiskFileDestinationOptions;
                 CrExportOptions.FormatOptions = CrFormatTypeOptions;
                 cryRpt.Export();
+
+                //Export AS PDF
+                cryRpt.ExportToDisk(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, @"C:\StorgePDF\Incoming_Wheat_" + year + "_" + month + "_" + day + "_" + huar + "_" + Mint + ".pdf");
+                Class1.Path_Report_Incoming_Wheat += @"C:\StorgePDF\Incoming_Wheat_" + year + "_" + month + "_" + day + "_" + huar + "_" + Mint + ".pdf";
 
                 //cryRpt.ExportToDisk(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, @"C:\StorgePDF\Incoming_Wheat_" + year + "_" + month + "_" + day + "_" + huar + "_" + Mint + ".xlsx");
                 //Class1.Path_Report_Incoming_Wheat = @"C:\StorgePDF\Incoming_Wheat_" + year + "_" + month + "_" + day + "_" + huar + "_" + Mint + ".xlsx";
@@ -359,18 +365,22 @@ namespace project_company_Elswassrya
                 string huar = DateTime.Now.Hour.ToString();
                 string Mint = DateTime.Now.Minute.ToString();
 
-                //Console.WriteLine("Laporety_" + year + "_" + month + "_" + day + "_" + huar + "_" + Mint + ".Pdf");
+                //Export AS Excel
                 ExportOptions CrExportOptions;
                 DiskFileDestinationOptions CrDiskFileDestinationOptions = new DiskFileDestinationOptions();
                 ExcelFormatOptions CrFormatTypeOptions = new ExcelFormatOptions();
                 CrDiskFileDestinationOptions.DiskFileName = @"C:\StorgePDF\Incoming_Wheat_" + year + "_" + month + "_" + day + "_" + huar + "_" + Mint + ".xls";
-                Class1.Path_Report_Incoming_Wheat = @"C:\StorgePDF\Incoming_Wheat_" + year + "_" + month + "_" + day + "_" + huar + "_" + Mint + ".xls";
+                Class1.Path_Report_Incoming_Wheat = @"C:\StorgePDF\Incoming_Wheat_" + year + "_" + month + "_" + day + "_" + huar + "_" + Mint + ".xls$";
                 CrExportOptions = cryRpt.ExportOptions;
                 CrExportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
                 CrExportOptions.ExportFormatType = ExportFormatType.ExcelRecord;
                 CrExportOptions.DestinationOptions = CrDiskFileDestinationOptions;
                 CrExportOptions.FormatOptions = CrFormatTypeOptions;
                 cryRpt.Export();
+
+                //Export AS PDF
+                cryRpt.ExportToDisk(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, @"C:\StorgePDF\Incoming_Wheat_" + year + "_" + month + "_" + day + "_" + huar + "_" + Mint + ".pdf");
+                Class1.Path_Report_Incoming_Wheat += @"C:\StorgePDF\Incoming_Wheat_" + year + "_" + month + "_" + day + "_" + huar + "_" + Mint + ".pdf";
 
                 //cryRpt.ExportToDisk(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, @"C:\StorgePDF\Incoming_Wheat_" + year + "_" + month + "_" + day + "_" + huar + "_" + Mint + ".xlsx");
                 //Class1.Path_Report_Incoming_Wheat = @"C:\StorgePDF\Incoming_Wheat_" + year + "_" + month + "_" + day + "_" + huar + "_" + Mint + ".xlsx";
@@ -410,21 +420,22 @@ namespace project_company_Elswassrya
                 string huar = DateTime.Now.Hour.ToString();
                 string Mint = DateTime.Now.Minute.ToString();
 
-                cryRpt.ExportToDisk(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, @"C:\StorgePDF\Incoming_Wheat_" + year + "_" + month + "_" + day + "_" + huar + "_" + Mint + ".Pdf");
-                Class1.Path_Report_Incoming_Wheat = @"C:\StorgePDF\Incoming_Wheat_" + year + "_" + month + "_" + day + "_" + huar + "_" + Mint + ".Pdf%";
-
-                //Console.WriteLine("Laporety_" + year + "_" + month + "_" + day + "_" + huar + "_" + Mint + ".Pdf");
+                //Export AS Excel
                 ExportOptions CrExportOptions;
                 DiskFileDestinationOptions CrDiskFileDestinationOptions = new DiskFileDestinationOptions();
                 ExcelFormatOptions CrFormatTypeOptions = new ExcelFormatOptions();
                 CrDiskFileDestinationOptions.DiskFileName = @"C:\StorgePDF\Incoming_Wheat_" + year + "_" + month + "_" + day + "_" + huar + "_" + Mint + ".xls";
-                Class1.Path_Report_Incoming_Wheat += @"C:\StorgePDF\Incoming_Wheat_" + year + "_" + month + "_" + day + "_" + huar + "_" + Mint + ".xls";
+                Class1.Path_Report_Incoming_Wheat = @"C:\StorgePDF\Incoming_Wheat_" + year + "_" + month + "_" + day + "_" + huar + "_" + Mint + ".xls$";
                 CrExportOptions = cryRpt.ExportOptions;
                 CrExportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
                 CrExportOptions.ExportFormatType = ExportFormatType.ExcelRecord;
                 CrExportOptions.DestinationOptions = CrDiskFileDestinationOptions;
                 CrExportOptions.FormatOptions = CrFormatTypeOptions;
                 cryRpt.Export();
+
+                //Export AS PDF
+                cryRpt.ExportToDisk(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, @"C:\StorgePDF\Incoming_Wheat_" + year + "_" + month + "_" + day + "_" + huar + "_" + Mint + ".pdf");
+                Class1.Path_Report_Incoming_Wheat += @"C:\StorgePDF\Incoming_Wheat_" + year + "_" + month + "_" + day + "_" + huar + "_" + Mint + ".pdf";
 
                 //cryRpt.ExportToDisk(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, @"C:\StorgePDF\Incoming_Wheat_" + year + "_" + month + "_" + day + "_" + huar + "_" + Mint + ".xlsx");
                 //Class1.Path_Report_Incoming_Wheat = @"C:\StorgePDF\Incoming_Wheat_" + year + "_" + month + "_" + day + "_" + huar + "_" + Mint + ".xlsx";
@@ -470,18 +481,22 @@ namespace project_company_Elswassrya
                 string huar = DateTime.Now.Hour.ToString();
                 string Mint = DateTime.Now.Minute.ToString();
 
-                //Console.WriteLine("Laporety_" + year + "_" + month + "_" + day + "_" + huar + "_" + Mint + ".Pdf");
+                //Export AS Excel
                 ExportOptions CrExportOptions;
                 DiskFileDestinationOptions CrDiskFileDestinationOptions = new DiskFileDestinationOptions();
                 ExcelFormatOptions CrFormatTypeOptions = new ExcelFormatOptions();
                 CrDiskFileDestinationOptions.DiskFileName = @"C:\StorgePDF\Incoming_Wheat_" + year + "_" + month + "_" + day + "_" + huar + "_" + Mint + ".xls";
-                Class1.Path_Report_Incoming_Wheat = @"C:\StorgePDF\Incoming_Wheat_" + year + "_" + month + "_" + day + "_" + huar + "_" + Mint + ".xls";
+                Class1.Path_Report_Incoming_Wheat = @"C:\StorgePDF\Incoming_Wheat_" + year + "_" + month + "_" + day + "_" + huar + "_" + Mint + ".xls$";
                 CrExportOptions = cryRpt.ExportOptions;
                 CrExportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
                 CrExportOptions.ExportFormatType = ExportFormatType.ExcelRecord;
                 CrExportOptions.DestinationOptions = CrDiskFileDestinationOptions;
                 CrExportOptions.FormatOptions = CrFormatTypeOptions;
                 cryRpt.Export();
+
+                //Export AS PDF
+                cryRpt.ExportToDisk(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, @"C:\StorgePDF\Incoming_Wheat_" + year + "_" + month + "_" + day + "_" + huar + "_" + Mint + ".pdf");
+                Class1.Path_Report_Incoming_Wheat += @"C:\StorgePDF\Incoming_Wheat_" + year + "_" + month + "_" + day + "_" + huar + "_" + Mint + ".pdf";
 
                 //cryRpt.ExportToDisk(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, @"C:\StorgePDF\Incoming_Wheat_" + year + "_" + month + "_" + day + "_" + huar + "_" + Mint + ".xlsx");
                 //Class1.Path_Report_Incoming_Wheat = @"C:\StorgePDF\Incoming_Wheat_" + year + "_" + month + "_" + day + "_" + huar + "_" + Mint + ".xlsx";
@@ -526,18 +541,22 @@ namespace project_company_Elswassrya
                     string huar = DateTime.Now.Hour.ToString();
                     string Mint = DateTime.Now.Minute.ToString();
 
-                    //Console.WriteLine("Laporety_" + year + "_" + month + "_" + day + "_" + huar + "_" + Mint + ".Pdf");
+                    //Export AS Excel
                     ExportOptions CrExportOptions;
                     DiskFileDestinationOptions CrDiskFileDestinationOptions = new DiskFileDestinationOptions();
                     ExcelFormatOptions CrFormatTypeOptions = new ExcelFormatOptions();
                     CrDiskFileDestinationOptions.DiskFileName = @"C:\StorgePDF\Incoming_Wheat_" + year + "_" + month + "_" + day + "_" + huar + "_" + Mint + ".xls";
-                    Class1.Path_Report_Incoming_Wheat = @"C:\StorgePDF\Incoming_Wheat_" + year + "_" + month + "_" + day + "_" + huar + "_" + Mint + ".xls";
+                    Class1.Path_Report_Incoming_Wheat = @"C:\StorgePDF\Incoming_Wheat_" + year + "_" + month + "_" + day + "_" + huar + "_" + Mint + ".xls$";
                     CrExportOptions = cryRpt.ExportOptions;
                     CrExportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
                     CrExportOptions.ExportFormatType = ExportFormatType.ExcelRecord;
                     CrExportOptions.DestinationOptions = CrDiskFileDestinationOptions;
                     CrExportOptions.FormatOptions = CrFormatTypeOptions;
                     cryRpt.Export();
+
+                    //Export AS PDF
+                    cryRpt.ExportToDisk(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, @"C:\StorgePDF\Incoming_Wheat_" + year + "_" + month + "_" + day + "_" + huar + "_" + Mint + ".pdf");
+                    Class1.Path_Report_Incoming_Wheat += @"C:\StorgePDF\Incoming_Wheat_" + year + "_" + month + "_" + day + "_" + huar + "_" + Mint + ".pdf";
 
                     //cryRpt.ExportToDisk(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, @"C:\StorgePDF\Incoming_Wheat_" + year + "_" + month + "_" + day + "_" + huar + "_" + Mint + ".xlsx");
                     //Class1.Path_Report_Incoming_Wheat = @"C:\StorgePDF\Incoming_Wheat_" + year + "_" + month + "_" + day + "_" + huar + "_" + Mint + ".xlsx";

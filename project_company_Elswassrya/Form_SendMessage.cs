@@ -15,20 +15,20 @@ using CrystalDecisions.Shared;
 using System.Timers;
 /*using System.Net;
 using System.Net.Mail;*/
-using System.IO;
+//using System.IO;
 using MailKit.Net.Smtp;
-using MailKit;
+//using MailKit;
 using MimeKit;
-using Aspose.Cells;
+//using Aspose.Cells;
 
 namespace project_company_Elswassrya
 {
     public partial class Form_SendMessage : Form
     {
-        crptproduct crpt = new crptproduct();
-        System.Timers.Timer Timer;
-        DateTime CurrantTime;
-        DateTime dateTime;
+        //crptproduct crpt = new crptproduct();
+        //System.Timers.Timer Timer;
+        //DateTime CurrantTime;
+        //DateTime dateTime;
         string Laboratory_Num = "";
         string Incoming_Wheat_Num = "";
         string End_Product_Num = "";
@@ -37,9 +37,10 @@ namespace project_company_Elswassrya
         string Email = "";
         string Mail_Send = "laboratory.mail5@gmail.com";
         string Password_Send = "beshoy123456789";
+        string MailName = "Cairo";
         string TargetAttachmint = "";
 
-        ReportDocument crypet = new ReportDocument();
+        //ReportDocument crypet = new ReportDocument(); Alexandria Cairo
         public Form_SendMessage()
         {
             InitializeComponent();
@@ -61,7 +62,7 @@ namespace project_company_Elswassrya
             {//Class1.Path_Report_Laboratory
                 MimeMessage message = new MimeMessage();
                 BodyBuilder Attachmint = new BodyBuilder();
-                message.From.Add(new MailboxAddress("Laboratory Cario", Mail_Send));
+                message.From.Add(new MailboxAddress(MailName, Mail_Send));
                 message.To.Add(MailboxAddress.Parse(Email));
                 message.Subject = "Laboratory";
                 message.Body = new TextPart("plain")
@@ -90,16 +91,28 @@ namespace project_company_Elswassrya
             try
              {
                 int CKACKSEND = chackSend++;
-                string[] ExclConvert = Class1.Path_Report_Incoming_Wheat.Split('%');
-                
-                string[] names = Email.Split('.');
-                if (names[0] == "‫beshoy" || names[1] == "bekheet@egyptianswiss")// ‫beshoy.bekheet@egyptianswiss.com
+                if (Class1.Path_Report_Incoming_Wheat.Substring(0, 50) == @"C:\StorgePDF\Incoming_Wheat_Avrage_Humidity_Month_")
                 {
-                    TargetAttachmint = ExclConvert[1]; //As Excel file
+                    TargetAttachmint = Class1.Path_Report_Incoming_Wheat;
                 }
                 else
                 {
-                    TargetAttachmint = ExclConvert[0]; //As PDF file
+                    string[] ExclConvert = Class1.Path_Report_Incoming_Wheat.Split('$'); // split the path of file ([0] is Excel file , [1] is pdf file )
+
+                    string[] names = Email.Split('.');
+                    if (Email == "beshoy.bekheet@egyptianswiss.com")// ‫beshoy.bekheet@egyptianswiss.com
+                    {
+                        TargetAttachmint = ExclConvert[0]; //As Excel file
+                    }
+                    else
+                    {
+                        TargetAttachmint = ExclConvert[1]; //As PDF file
+                    }
+
+                    if (rad_excel.Checked)
+                        TargetAttachmint = ExclConvert[0];
+                    else if(rad_pdf.Checked)
+                        TargetAttachmint = ExclConvert[1];
                 }
 
 
@@ -107,14 +120,14 @@ namespace project_company_Elswassrya
                 {
                     MimeMessage message = new MimeMessage();
                     BodyBuilder Attachmint = new BodyBuilder();
-                    message.From.Add(new MailboxAddress("Laboratory Cario", Mail_Send));
+                    message.From.Add(new MailboxAddress(MailName, Mail_Send));
                     message.To.Add(MailboxAddress.Parse(Email));
                     message.Subject = "Incoming Wheat";
                     message.Body = null;
-                    /*message.Body = new TextPart("plain")
+                    message.Body = new TextPart("plain")
                     {
                         Text = @""
-                    };*/
+                    };
                     Attachmint.Attachments.Add(TargetAttachmint);
                     message.Body = Attachmint.ToMessageBody();
 
@@ -143,7 +156,7 @@ namespace project_company_Elswassrya
             {
                 MimeMessage message = new MimeMessage();
                 BodyBuilder Attachmint = new BodyBuilder();
-                message.From.Add(new MailboxAddress("Laboratory Cario", Mail_Send));
+                message.From.Add(new MailboxAddress(MailName, Mail_Send));
                 message.To.Add(MailboxAddress.Parse(Email));
                 message.Subject = "End Product";
                 message.Body = new TextPart("plain")
@@ -172,7 +185,7 @@ namespace project_company_Elswassrya
             {
                 MimeMessage message = new MimeMessage();
                 BodyBuilder Attachmint = new BodyBuilder();
-                message.From.Add(new MailboxAddress("Laboratory Cario", Mail_Send));
+                message.From.Add(new MailboxAddress(MailName, Mail_Send));
                 message.To.Add(MailboxAddress.Parse(Email));
                 message.Subject = "Avrage Humidity Month";
                 message.Body = new TextPart("plain")
@@ -201,7 +214,7 @@ namespace project_company_Elswassrya
             {
                 MimeMessage message = new MimeMessage();
                 BodyBuilder Attachmint = new BodyBuilder();
-                message.From.Add(new MailboxAddress("Laboratory Cario", Mail_Send));
+                message.From.Add(new MailboxAddress(MailName, Mail_Send));
                 message.To.Add(MailboxAddress.Parse(Email));
                 message.Subject = "Samples Product";
                 message.Body = new TextPart("plain")
@@ -232,7 +245,7 @@ namespace project_company_Elswassrya
             {
                 MimeMessage message = new MimeMessage();
                 BodyBuilder Attachmint = new BodyBuilder();
-                message.From.Add(new MailboxAddress("Laboratory Cario", Mail_Send));
+                message.From.Add(new MailboxAddress(MailName, Mail_Send));
                 message.To.Add(MailboxAddress.Parse(Email));
                 message.Subject = "final product pasta";
                 message.Body = new TextPart("plain")
@@ -262,7 +275,7 @@ namespace project_company_Elswassrya
             {
                 MimeMessage message = new MimeMessage();
                 BodyBuilder Attachmint = new BodyBuilder();
-                message.From.Add(new MailboxAddress("Laboratory Cario", Mail_Send));
+                message.From.Add(new MailboxAddress(MailName, Mail_Send));
                 message.To.Add(MailboxAddress.Parse(Email));
                 message.Subject = "Iprovement";
                 message.Body = new TextPart("plain")
@@ -289,6 +302,14 @@ namespace project_company_Elswassrya
         {
             //fill combobox to data Emails
             con.Open();
+            if (Class1.Path_Report_Incoming_Wheat != "")
+            {
+                if (Class1.Path_Report_Incoming_Wheat.Substring(0, 50) != @"C:\StorgePDF\Incoming_Wheat_Avrage_Humidity_Month_")
+                {
+                    rad_excel.Visible = true;
+                    rad_pdf.Visible = true;
+                }
+            }
             Status_Panel.Visible = false;
             var query = "SELECT `Acc_Name` FROM `accounts` ";
             using (var command = new MySqlCommand(query, con))
@@ -318,7 +339,7 @@ namespace project_company_Elswassrya
         {
             MimeMessage message = new MimeMessage();
             BodyBuilder Attachmint = new BodyBuilder();
-            message.From.Add(new MailboxAddress("Laboratory Cario", Mail_Send));
+            message.From.Add(new MailboxAddress(MailName, Mail_Send));
             message.To.Add(MailboxAddress.Parse(Email));
             message.Subject = "Report";
             message.Body = new TextPart("plain")

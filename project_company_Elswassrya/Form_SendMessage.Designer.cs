@@ -53,6 +53,8 @@
             this.Status_Panel = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.rad_excel = new System.Windows.Forms.RadioButton();
+            this.rad_pdf = new System.Windows.Forms.RadioButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
@@ -219,6 +221,8 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel3.Controls.Add(this.rad_pdf);
+            this.panel3.Controls.Add(this.rad_excel);
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.pictureBox5);
@@ -310,6 +314,32 @@
             this.pictureBox6.TabIndex = 119;
             this.pictureBox6.TabStop = false;
             // 
+            // rad_excel
+            // 
+            this.rad_excel.AutoSize = true;
+            this.rad_excel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rad_excel.Location = new System.Drawing.Point(536, 109);
+            this.rad_excel.Name = "rad_excel";
+            this.rad_excel.Size = new System.Drawing.Size(76, 24);
+            this.rad_excel.TabIndex = 119;
+            this.rad_excel.TabStop = true;
+            this.rad_excel.Text = "Excel";
+            this.rad_excel.UseVisualStyleBackColor = true;
+            this.rad_excel.Visible = false;
+            // 
+            // rad_pdf
+            // 
+            this.rad_pdf.AutoSize = true;
+            this.rad_pdf.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rad_pdf.Location = new System.Drawing.Point(536, 139);
+            this.rad_pdf.Name = "rad_pdf";
+            this.rad_pdf.Size = new System.Drawing.Size(67, 24);
+            this.rad_pdf.TabIndex = 120;
+            this.rad_pdf.TabStop = true;
+            this.rad_pdf.Text = "PDF";
+            this.rad_pdf.UseVisualStyleBackColor = true;
+            this.rad_pdf.Visible = false;
+            // 
             // Form_SendMessage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -370,5 +400,7 @@
         private System.Windows.Forms.Panel Status_Panel;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.RadioButton rad_pdf;
+        private System.Windows.Forms.RadioButton rad_excel;
     }
 }

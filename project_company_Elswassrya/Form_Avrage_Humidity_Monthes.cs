@@ -49,7 +49,7 @@ namespace project_company_Elswassrya
                 adap.SelectCommand = cmd;
                 DataSet custDB = new DataSet();
                 custDB.Clear();
-                adap.Fill(custDB, "");
+                adap.Fill(custDB, "Average_Humidity");
                 CrystalReport_avrage_humidity_monthes myReport = new CrystalReport_avrage_humidity_monthes();
                 myReport.SetDataSource(custDB);
                 crystalReportViewer1.ReportSource = myReport;

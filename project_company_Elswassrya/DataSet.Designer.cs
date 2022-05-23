@@ -1932,6 +1932,8 @@ namespace project_company_Elswassrya {
             
             private global::System.Data.DataColumn columnDate_IW;
             
+            private global::System.Data.DataColumn columnsupplayer;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public Incoming_WheatDataTable() {
@@ -2095,6 +2097,14 @@ namespace project_company_Elswassrya {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn supplayerColumn {
+                get {
+                    return this.columnsupplayer;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2146,7 +2156,8 @@ namespace project_company_Elswassrya {
                         string Cleanliness, 
                         string Type_Wheat, 
                         string Notes, 
-                        string Date_IW) {
+                        string Date_IW, 
+                        string supplayer) {
                 Incoming_WheatRow rowIncoming_WheatRow = ((Incoming_WheatRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Number_IW,
@@ -2164,7 +2175,8 @@ namespace project_company_Elswassrya {
                         Cleanliness,
                         Type_Wheat,
                         Notes,
-                        Date_IW};
+                        Date_IW,
+                        supplayer};
                 rowIncoming_WheatRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowIncoming_WheatRow);
                 return rowIncoming_WheatRow;
@@ -2203,6 +2215,7 @@ namespace project_company_Elswassrya {
                 this.columnType_Wheat = base.Columns["Type_Wheat"];
                 this.columnNotes = base.Columns["Notes"];
                 this.columnDate_IW = base.Columns["Date_IW"];
+                this.columnsupplayer = base.Columns["supplayer"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2240,6 +2253,8 @@ namespace project_company_Elswassrya {
                 base.Columns.Add(this.columnNotes);
                 this.columnDate_IW = new global::System.Data.DataColumn("Date_IW", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDate_IW);
+                this.columnsupplayer = new global::System.Data.DataColumn("supplayer", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsupplayer);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10036,6 +10051,22 @@ namespace project_company_Elswassrya {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string supplayer {
+                get {
+                    try {
+                        return ((string)(this[this.tableIncoming_Wheat.supplayerColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'supplayer\' in table \'Incoming_Wheat\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableIncoming_Wheat.supplayerColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsNumber_IWNull() {
                 return this.IsNull(this.tableIncoming_Wheat.Number_IWColumn);
             }
@@ -10224,6 +10255,18 @@ namespace project_company_Elswassrya {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetDate_IWNull() {
                 this[this.tableIncoming_Wheat.Date_IWColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IssupplayerNull() {
+                return this.IsNull(this.tableIncoming_Wheat.supplayerColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetsupplayerNull() {
+                this[this.tableIncoming_Wheat.supplayerColumn] = global::System.Convert.DBNull;
             }
         }
         

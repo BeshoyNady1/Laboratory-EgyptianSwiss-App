@@ -71,7 +71,7 @@ namespace project_company_Elswassrya
             else if (comboBox1.SelectedItem.Equals("From Date To Date"))
             {
                
-                string Query = "", Query2 = "", Query1 = "";
+                string  Query2 = "", Query1 = "";
                 Query2 = dateTimePicker_M_IM.Value.ToString();
                 Query2 = Query2.Substring(0, 10);
 

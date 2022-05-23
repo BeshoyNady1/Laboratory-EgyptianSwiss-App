@@ -134,6 +134,12 @@
       <DependentUpon>CrystalReport_avrage_humidity_monthes.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="CrystalReport__AvgHumid.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport__AvgHumid.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="CrystalReport_End_Product_New.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -215,11 +221,23 @@
     <Compile Include="Form_Avrage_Humidity_Monthes.Designer.cs">
       <DependentUpon>Form_Avrage_Humidity_Monthes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_EndProduct_AvgHumid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_EndProduct_AvgHumid.Designer.cs">
+      <DependentUpon>Form_EndProduct_AvgHumid.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_end_product.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form_end_product.Designer.cs">
       <DependentUpon>Form_end_product.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_FinalProductPasta_AvgHumid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_FinalProductPasta_AvgHumid.Designer.cs">
+      <DependentUpon>Form_FinalProductPasta_AvgHumid.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_Final_Product_Pasta.cs">
       <SubType>Form</SubType>
@@ -238,6 +256,12 @@
     </Compile>
     <Compile Include="Form_improvement_T.Designer.cs">
       <DependentUpon>Form_improvement_T.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_IncomeWheat_AvgHumid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_IncomeWheat_AvgHumid.Designer.cs">
+      <DependentUpon>Form_IncomeWheat_AvgHumid.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_incoming_wheat.cs">
       <SubType>Form</SubType>
@@ -268,6 +292,12 @@
     </Compile>
     <Compile Include="form_project.Designer.cs">
       <DependentUpon>form_project.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_SamplesProduction_AvgHumid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_SamplesProduction_AvgHumid.Designer.cs">
+      <DependentUpon>Form_SamplesProduction_AvgHumid.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_samples_production.cs">
       <SubType>Form</SubType>
@@ -315,6 +345,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReport_avrage_humidity_monthes.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReport__AvgHumid.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport__AvgHumid.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="CrystalReport_End_Product_New.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReport_End_Product_New.cs</LastGenOutput>
@@ -361,8 +395,14 @@
     <EmbeddedResource Include="Form_Avrage_Humidity_Monthes.resx">
       <DependentUpon>Form_Avrage_Humidity_Monthes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form_EndProduct_AvgHumid.resx">
+      <DependentUpon>Form_EndProduct_AvgHumid.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_end_product.resx">
       <DependentUpon>Form_end_product.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_FinalProductPasta_AvgHumid.resx">
+      <DependentUpon>Form_FinalProductPasta_AvgHumid.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Final_Product_Pasta.resx">
       <DependentUpon>Form_Final_Product_Pasta.cs</DependentUpon>
@@ -372,6 +412,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form_improvement_T.resx">
       <DependentUpon>Form_improvement_T.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_IncomeWheat_AvgHumid.resx">
+      <DependentUpon>Form_IncomeWheat_AvgHumid.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_incoming_wheat.resx">
       <DependentUpon>Form_incoming_wheat.cs</DependentUpon>
@@ -387,6 +430,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="form_project.resx">
       <DependentUpon>form_project.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_SamplesProduction_AvgHumid.resx">
+      <DependentUpon>Form_SamplesProduction_AvgHumid.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_samples_production.resx">
       <DependentUpon>Form_samples_production.cs</DependentUpon>

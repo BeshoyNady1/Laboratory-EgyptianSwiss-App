@@ -349,7 +349,7 @@ namespace project_company_Elswassrya
                 MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        private void Inset_AvrageHumidity_YasterDay()
+        private string Get_AvrageHumidity_YasterDay()
         {
             string DateYasterDay = "";
             string AvrageHumidity = "";
@@ -359,62 +359,40 @@ namespace project_company_Elswassrya
             {
                 using (var reader = command.ExecuteReader())
                 {
-
                     while (reader.Read())
                     {
-
-
                         DateYasterDay = reader.GetString("YasterDay");
                         AvrageHumidity = reader.GetString("AvrageHumidity");
-
-
                     }
-
                 }
-
             }
-
-            // Step 2 Insert Data
-            string StrInsert = "INSERT INTO `average_humidity_days` VALUES ('"+null+"','"+ DateYasterDay + "','"+ AvrageHumidity + "')";
-            cmd.Parameters.Clear();
-            SetCommand(StrInsert);
-            cmd.ExecuteNonQuery();
-
+            return AvrageHumidity;
         }
         private void Last_Day()
         {
             try
-            {//fill data in SubReport
-                Inset_AvrageHumidity_YasterDay();
-                MySqlDataAdapter adap;
-                cmd = con.CreateCommand();
-                //ReportDocument cryRpt = new ReportDocument();
-                string StrSearch = "SELECT * FROM `average_humidity_days` WHERE `date_day` = CURRENT_DATE() - INTERVAL 1 DAY ";
-                cmd.CommandText = StrSearch;
-                adap = new MySqlDataAdapter();
-                adap.SelectCommand = cmd;
-                DataSet custDB = new DataSet();
-                custDB.Clear();
-                adap.Fill(custDB, "Average_Humidity_Days");
-                CrystalReport_End_Product_New myReport = new CrystalReport_End_Product_New();
-                myReport.Subreports[0].SetDataSource(custDB);
-
-
-
-
+            {//fill data in SubReport  (tex_avg)
+                
                 // Fill Data in Primary Report
                 MySqlDataAdapter adap2;
                 cmd = con.CreateCommand();
                 ReportDocument cryRpt2 = new ReportDocument();
-                 StrSearch = "SELECT * FROM `end_product` WHERE `Date_EP` =  CURRENT_DATE() - INTERVAL 1 DAY ";
+                string StrSearch = "SELECT * FROM `end_product` WHERE `Date_EP` =  CURRENT_DATE() - INTERVAL 1 DAY ";
                 cmd.CommandText = StrSearch;
                 adap2 = new MySqlDataAdapter();
                 adap2.SelectCommand = cmd;
                 DataSet custDB2 = new DataSet();
                 custDB2.Clear();
                 adap2.Fill(custDB2, "End_Product");
-                //CrystalReport_End_Product myReport = new CrystalReport_End_Product();
+                CrystalReport_End_Product_New myReport = new CrystalReport_End_Product_New();
                 myReport.SetDataSource(custDB2);
+                TextObject SUM_Avg = (TextObject)myReport.ReportDefinition.Sections["Section4"].ReportObjects["tex_avg"];
+                string avg_data = Get_AvrageHumidity_YasterDay();
+                if (avg_data.Length > 6)
+                    SUM_Avg.Text = Get_AvrageHumidity_YasterDay().Substring(0, 5);
+                else
+                    SUM_Avg.Text = Get_AvrageHumidity_YasterDay();
+
                 crystalReportViewer1.ReportSource = myReport;
                 crystalReportViewer1.Refresh();
                 cryRpt2 = myReport;

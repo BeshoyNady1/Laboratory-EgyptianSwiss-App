@@ -18,10 +18,10 @@ namespace project_company_Elswassrya
 {
     public partial class Form_improvement_T : Form
     {
-        crptproduct crpt = new crptproduct();
-        System.Timers.Timer Timer;
-        DateTime CurrantTime;
-        DateTime dateTime;
+        //crptproduct crpt = new crptproduct();
+        //System.Timers.Timer Timer;
+        //DateTime CurrantTime;
+        //DateTime dateTime;
         
         ReportDocument crypet = new ReportDocument();
         public Form_improvement_T()
@@ -30,7 +30,7 @@ namespace project_company_Elswassrya
         }
         MySqlConnection con = new MySqlConnection("datasource=127.0.0.1;port=3306;server=localhost;database=project_company;uid=root;password=;sslmode=none;charset=utf8;");
         MySqlCommand cmd = new MySqlCommand();
-        private object ExportOption;
+        //private object ExportOption;
 
         private void SetCommand(string SQL)
         {

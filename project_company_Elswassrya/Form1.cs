@@ -34,7 +34,14 @@ namespace project_company_Elswassrya
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            con.Open();
+            try
+            {
+                con.Open();
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
 
         }
 
