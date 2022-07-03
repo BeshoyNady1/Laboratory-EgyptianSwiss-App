@@ -25,22 +25,17 @@ namespace project_company_Elswassrya
 {
     public partial class Form_SendMessage : Form
     {
-        //crptproduct crpt = new crptproduct();
-        //System.Timers.Timer Timer;
-        //DateTime CurrantTime;
-        //DateTime dateTime;
         string Laboratory_Num = "";
         string Incoming_Wheat_Num = "";
         string End_Product_Num = "";
         string Samples_Product = "";
         string final_product_pasta = "";
         string Email = "";
-        string Mail_Send = "laboratory.mail5@gmail.com";
-        string Password_Send = "beshoy123456789";
-        string MailName = "Cairo";
+        string Mail_Send = "Laboratory.Alexandria@gmail.com";
+        string Password_Send = "bfbwotozkpuketgv";
+        string MailName = "Alexandria";
         string TargetAttachmint = "";
 
-        //ReportDocument crypet = new ReportDocument(); Alexandria Cairo
         public Form_SendMessage()
         {
             InitializeComponent();
