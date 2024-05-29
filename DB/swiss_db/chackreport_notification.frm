@@ -1,0 +1,16 @@
+TYPE=VIEW
+query=select `swiss_db`.`h_chack_report_db`.`id_num` AS `id_num`,`swiss_db`.`h_chack_report_db`.`date` AS `date`,`swiss_db`.`h_chack_report_db`.`my_name` AS `my_name`,`swiss_db`.`h_chack_report_db`.`recipient` AS `recipient`,`swiss_db`.`h_chack_report_db`.`recipient_name` AS `recipient_name` from `swiss_db`.`h_chack_report_db` where `swiss_db`.`h_chack_report_db`.`recipient_name` is null order by `swiss_db`.`h_chack_report_db`.`recipient`,`swiss_db`.`h_chack_report_db`.`id_num`
+md5=be88b5515dc34b5e411c2958c374108a
+updatable=1
+algorithm=0
+definer_user=root
+definer_host=localhost
+suid=2
+with_check_option=0
+timestamp=2021-12-13 06:51:44
+create-version=2
+source=SELECT`id_num`,`date` ,`my_name` ,`recipient` , `recipient_name`FROM `h_chack_report_db` WHERE `recipient_name` is null ORDER BY `recipient` ASC, `id_num` ASC
+client_cs_name=utf8mb4
+connection_cl_name=utf8mb4_unicode_ci
+view_body_utf8=select `swiss_db`.`h_chack_report_db`.`id_num` AS `id_num`,`swiss_db`.`h_chack_report_db`.`date` AS `date`,`swiss_db`.`h_chack_report_db`.`my_name` AS `my_name`,`swiss_db`.`h_chack_report_db`.`recipient` AS `recipient`,`swiss_db`.`h_chack_report_db`.`recipient_name` AS `recipient_name` from `swiss_db`.`h_chack_report_db` where `swiss_db`.`h_chack_report_db`.`recipient_name` is null order by `swiss_db`.`h_chack_report_db`.`recipient`,`swiss_db`.`h_chack_report_db`.`id_num`
+mariadb-version=100419

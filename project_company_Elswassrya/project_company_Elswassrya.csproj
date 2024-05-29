@@ -1,0 +1,692 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BE7637DB-C5A9-4336-B0D1-CBDC71110072}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>project_company_Elswassrya</RootNamespace>
+    <AssemblyName>project_company_Elswassrya</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Aspose.Cells, Version=21.11.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
+      <HintPath>..\packages\Aspose.Cells.21.11.0\lib\net40\Aspose.Cells.dll</HintPath>
+    </Reference>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.10.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
+      <HintPath>..\packages\Portable.BouncyCastle.1.8.10\lib\net40\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine">
+      <HintPath>..\..\..\..\..\..\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win32_x86\dotnet\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.TemplateEngine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.CommLayer">
+      <HintPath>..\..\..\..\..\..\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win32_x86\dotnet\CrystalDecisions.ReportAppServer.CommLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource">
+      <HintPath>..\..\..\..\..\..\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win32_x86\dotnet\CrystalDecisions.ReportSource.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared">
+      <HintPath>..\..\..\..\..\..\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win32_x86\dotnet\CrystalDecisions.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Windows.Forms">
+      <HintPath>..\..\..\..\..\..\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win32_x86\dotnet\CrystalDecisions.Windows.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.6.1\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="MailKit, Version=2.13.0.0, Culture=neutral, PublicKeyToken=4e064fe7c44a8f1b, processorArchitecture=MSIL">
+      <HintPath>..\packages\MailKit.2.13.0\lib\net46\MailKit.dll</HintPath>
+    </Reference>
+    <Reference Include="MimeKit, Version=2.13.0.0, Culture=neutral, PublicKeyToken=bede1c8a46c66814, processorArchitecture=MSIL">
+      <HintPath>..\packages\MimeKit.2.13.0\lib\net46\MimeKit.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.17.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.17\lib\net452\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Renci.SshNet, Version=2016.1.0.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL">
+      <HintPath>..\packages\SSH.NET.2016.1.0\lib\net40\Renci.SshNet.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Messaging" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class1.cs" />
+    <Compile Include="crptproduct.cs" />
+    <Compile Include="CrystalReport_average_humidity_days.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport_average_humidity_days.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReport_avrage_humidity_monthes.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport_avrage_humidity_monthes.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReport__AvgHumid.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport__AvgHumid.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReport_End_Product_New.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport_End_Product_New.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReport_Final_Product_Pasta.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport_Final_Product_Pasta.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReport_improvement.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport_improvement.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReport_incoming_wheat.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport_incoming_wheat.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReport_incoming_wheat_T.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport_incoming_wheat_T.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReport_LA.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport_LA.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReport_Laboratory.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport_Laboratory.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReport_samples_production.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport_samples_production.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReport_Track_Improvement.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport_Track_Improvement.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReport_track_samples_production.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport_track_samples_production.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomerList.cs" />
+    <Compile Include="DataSet.cs">
+      <DependentUpon>DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Avrage_Humidity_Monthes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Avrage_Humidity_Monthes.Designer.cs">
+      <DependentUpon>Form_Avrage_Humidity_Monthes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_EndProduct_AvgHumid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_EndProduct_AvgHumid.Designer.cs">
+      <DependentUpon>Form_EndProduct_AvgHumid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_end_product.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_end_product.Designer.cs">
+      <DependentUpon>Form_end_product.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_FinalProductPasta_AvgHumid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_FinalProductPasta_AvgHumid.Designer.cs">
+      <DependentUpon>Form_FinalProductPasta_AvgHumid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Final_Product_Pasta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Final_Product_Pasta.Designer.cs">
+      <DependentUpon>Form_Final_Product_Pasta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Improvement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Improvement.Designer.cs">
+      <DependentUpon>Form_Improvement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_improvement_T.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_improvement_T.Designer.cs">
+      <DependentUpon>Form_improvement_T.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_IncomeWheat_AvgHumid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_IncomeWheat_AvgHumid.Designer.cs">
+      <DependentUpon>Form_IncomeWheat_AvgHumid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_incoming_wheat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_incoming_wheat.Designer.cs">
+      <DependentUpon>Form_incoming_wheat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_incoming_wheat_T.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_incoming_wheat_T.Designer.cs">
+      <DependentUpon>Form_incoming_wheat_T.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_LA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_LA.Designer.cs">
+      <DependentUpon>Form_LA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_laboratory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_laboratory.Designer.cs">
+      <DependentUpon>Form_laboratory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_project.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_project.Designer.cs">
+      <DependentUpon>form_project.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_SamplesProduction_AvgHumid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_SamplesProduction_AvgHumid.Designer.cs">
+      <DependentUpon>Form_SamplesProduction_AvgHumid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_samples_production.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_samples_production.Designer.cs">
+      <DependentUpon>Form_samples_production.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_SendMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_SendMessage.Designer.cs">
+      <DependentUpon>Form_SendMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_track_samples_production.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_track_samples_production.Designer.cs">
+      <DependentUpon>Form_track_samples_production.cs</DependentUpon>
+    </Compile>
+    <Compile Include="My_setting_Account.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My_setting_Account.Designer.cs">
+      <DependentUpon>My_setting_Account.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Report_Laboratory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report_Laboratory.Designer.cs">
+      <DependentUpon>Report_Laboratory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="tast.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="tast.Designer.cs">
+      <DependentUpon>tast.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CrystalReport_average_humidity_days.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport_average_humidity_days.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReport_avrage_humidity_monthes.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport_avrage_humidity_monthes.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReport__AvgHumid.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport__AvgHumid.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReport_End_Product_New.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport_End_Product_New.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReport_Final_Product_Pasta.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport_Final_Product_Pasta.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReport_improvement.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport_improvement.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReport_incoming_wheat.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport_incoming_wheat.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReport_incoming_wheat_T.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport_incoming_wheat_T.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReport_LA.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport_LA.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReport_Laboratory.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport_Laboratory.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReport_samples_production.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport_samples_production.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReport_Track_Improvement.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport_Track_Improvement.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReport_track_samples_production.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport_track_samples_production.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Avrage_Humidity_Monthes.resx">
+      <DependentUpon>Form_Avrage_Humidity_Monthes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_EndProduct_AvgHumid.resx">
+      <DependentUpon>Form_EndProduct_AvgHumid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_end_product.resx">
+      <DependentUpon>Form_end_product.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_FinalProductPasta_AvgHumid.resx">
+      <DependentUpon>Form_FinalProductPasta_AvgHumid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Final_Product_Pasta.resx">
+      <DependentUpon>Form_Final_Product_Pasta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Improvement.resx">
+      <DependentUpon>Form_Improvement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_improvement_T.resx">
+      <DependentUpon>Form_improvement_T.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_IncomeWheat_AvgHumid.resx">
+      <DependentUpon>Form_IncomeWheat_AvgHumid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_incoming_wheat.resx">
+      <DependentUpon>Form_incoming_wheat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_incoming_wheat_T.resx">
+      <DependentUpon>Form_incoming_wheat_T.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_LA.resx">
+      <DependentUpon>Form_LA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_laboratory.resx">
+      <DependentUpon>Form_laboratory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_project.resx">
+      <DependentUpon>form_project.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_SamplesProduction_AvgHumid.resx">
+      <DependentUpon>Form_SamplesProduction_AvgHumid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_samples_production.resx">
+      <DependentUpon>Form_samples_production.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_SendMessage.resx">
+      <DependentUpon>Form_SendMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_track_samples_production.resx">
+      <DependentUpon>Form_track_samples_production.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My_setting_Account.resx">
+      <DependentUpon>My_setting_Account.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Report_Laboratory.resx">
+      <DependentUpon>Report_Laboratory.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="DataSet.xsc">
+      <DependentUpon>DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet.xss">
+      <DependentUpon>DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2B7D4BD5-5056-B775-A2CB5F406509034D-logo.jpg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Circuit-c6478a3c-a7fc-3ae5-b359-2ceb9df810eb%281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GO7OSacL_400x400.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\man-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Office-Customer-Male-Light-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Person-Male-Light-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Places-user-identity-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Circuit-c6478a3c-a7fc-3ae5-b359-2ceb9df810eb%281%291.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Custom-Icon-Design-Pretty-Office-11-New.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delacro-Id-Search-2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dryicons-Aesthetica-2-Process-accept.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Everaldo-Crystal-Clear-Action-cancel.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gakuseisean-Ivista-2-Files-New-File.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hopstarter-Soft-Scraps-Edit-Document.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hopstarter-Soft-Scraps-File-Delete.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Iconcreme-Halloween-Broom.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icondesigner.net-Hyperion-3D-Experiments.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Oxygen-Icons.org-Oxygen-Apps-system-software-update.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gakuseisean-Ivista-2-Files-Download-File.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gakuseisean-Ivista-2-Files-Upload-File.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delacro-Id-Search-21.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Placas-db94479c-c798-3ff2-b174-4de720271507%281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\١١٣٦١٦.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dario-Arnaez-Genesis-3G-User-Files.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Scoyo-Badge-Logout.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons8-Ios7-Users-Change-User.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Treetog-I-Floppy-Small.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Custom-Icon-Design-Flatastic-5-Reports.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_close_window_100px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_maximize_window_100px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_minimize_window_100px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mail-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Communication-email-blue-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\email-2-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vcferreira-Firefox-Os-Clock.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\send_email_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_send_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ampeross-Qetto-2-Check.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimize-icon-14.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\116925-matte-blue-and-white-square-icon-business-document10-sc1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hopstarter-Soft-Scraps-Button-Close.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\240_F_111916148_cuAsPlsE5qXyczDBYk6GBUgmOc8gD37g.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button_pressed_with_close_icon-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OIPUZ4WUIK5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hopstarter-Sleek-Xp-Software-Windows-Close-Program.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Saki-NuoveXT-2-Actions-session-exit.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Saki-NuoveXT-2-Actions-session-exit1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\116925-matte-blue-and-white-square-icon-business-document10-sc11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimize-icon-141.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Saki-NuoveXT-2-Actions-session-exit2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Capqqqqqqqqqqqqre.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons8-Windows-8-Users-Guest.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons8-Windows-8-Security-Password-2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\log-in.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\enter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\avatar-vector-icon-man-vector-symbol-avatar-icon-png_219960.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Saki-NuoveXT-2-Actions-session-exit3.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1ure.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2ure.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3re.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4ure.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5ure.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\6ture.JPG" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

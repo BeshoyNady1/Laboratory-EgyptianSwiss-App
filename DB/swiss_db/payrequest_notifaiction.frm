@@ -1,0 +1,16 @@
+TYPE=VIEW
+query=select `swiss_db`.`h_payrequest_report_db`.`id_num` AS `id_num`,`swiss_db`.`h_payrequest_report_db`.`date` AS `date`,`swiss_db`.`h_payrequest_report_db`.`my_name` AS `my_name`,`swiss_db`.`h_payrequest_report_db`.`who_want` AS `recipient`,`swiss_db`.`h_payrequest_report_db`.`who_want_name` AS `recipient_name` from `swiss_db`.`h_payrequest_report_db` where `swiss_db`.`h_payrequest_report_db`.`who_want_name` is null order by `swiss_db`.`h_payrequest_report_db`.`who_want`,`swiss_db`.`h_payrequest_report_db`.`id_num` desc
+md5=a5e23fa81ce687d09c9ad3a6e29fd55e
+updatable=1
+algorithm=0
+definer_user=root
+definer_host=localhost
+suid=2
+with_check_option=0
+timestamp=2021-12-13 10:05:52
+create-version=2
+source=SELECT `id_num`, `date`, `my_name`,`who_want`AS `recipient`,`who_want_name`AS `recipient_name` FROM `h_payrequest_report_db` WHERE `who_want_name` IS NULL ORDER BY `who_want` , `id_num` DESC
+client_cs_name=utf8mb4
+connection_cl_name=utf8mb4_unicode_ci
+view_body_utf8=select `swiss_db`.`h_payrequest_report_db`.`id_num` AS `id_num`,`swiss_db`.`h_payrequest_report_db`.`date` AS `date`,`swiss_db`.`h_payrequest_report_db`.`my_name` AS `my_name`,`swiss_db`.`h_payrequest_report_db`.`who_want` AS `recipient`,`swiss_db`.`h_payrequest_report_db`.`who_want_name` AS `recipient_name` from `swiss_db`.`h_payrequest_report_db` where `swiss_db`.`h_payrequest_report_db`.`who_want_name` is null order by `swiss_db`.`h_payrequest_report_db`.`who_want`,`swiss_db`.`h_payrequest_report_db`.`id_num` desc
+mariadb-version=100419

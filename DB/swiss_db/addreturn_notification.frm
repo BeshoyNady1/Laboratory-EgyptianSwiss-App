@@ -1,0 +1,16 @@
+TYPE=VIEW
+query=select `swiss_db`.`h_addreturn_report_db`.`id_num` AS `id_num`,`swiss_db`.`h_addreturn_report_db`.`date` AS `date`,`swiss_db`.`h_addreturn_report_db`.`my_name` AS `my_name`,`swiss_db`.`h_addreturn_report_db`.`return_from` AS `recipient`,`swiss_db`.`h_addreturn_report_db`.`delivered_name` AS `recipient_name` from `swiss_db`.`h_addreturn_report_db` where `swiss_db`.`h_addreturn_report_db`.`delivered_name` is null order by `swiss_db`.`h_addreturn_report_db`.`id_num` desc
+md5=4442b21a2bc16611ad56c968caf7db54
+updatable=1
+algorithm=0
+definer_user=root
+definer_host=localhost
+suid=2
+with_check_option=0
+timestamp=2021-12-13 06:58:12
+create-version=2
+source=SELECT `id_num`, `date`, `my_name`,`return_from`AS `recipient`,`delivered_name`AS `recipient_name` FROM `h_addreturn_report_db` WHERE `delivered_name` IS NULL ORDER BY `h_addreturn_report_db`.`id_num` DESC
+client_cs_name=utf8mb4
+connection_cl_name=utf8mb4_unicode_ci
+view_body_utf8=select `swiss_db`.`h_addreturn_report_db`.`id_num` AS `id_num`,`swiss_db`.`h_addreturn_report_db`.`date` AS `date`,`swiss_db`.`h_addreturn_report_db`.`my_name` AS `my_name`,`swiss_db`.`h_addreturn_report_db`.`return_from` AS `recipient`,`swiss_db`.`h_addreturn_report_db`.`delivered_name` AS `recipient_name` from `swiss_db`.`h_addreturn_report_db` where `swiss_db`.`h_addreturn_report_db`.`delivered_name` is null order by `swiss_db`.`h_addreturn_report_db`.`id_num` desc
+mariadb-version=100419
